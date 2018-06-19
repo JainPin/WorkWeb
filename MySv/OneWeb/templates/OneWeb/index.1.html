@@ -1,0 +1,17 @@
+
+{% if latest_question_list %}
+
+<ul>
+{% for blog in latest_question_list %}
+    
+    {% if forloop.counter|divisibleby:"2" %}
+    <li><a href="/OneWeb/{{ blog.id }}">{{ blog.title }}</a></li>
+    {% else %}
+    <li><a href="/OneWeb/{{ blog.id }}">132</a></li>
+    {% endif %}
+    {{forloop.counter|add:"1"}}
+{% endfor %}
+</ul>
+{% else %}
+<p>沒有留言</p>
+{% endif %}

@@ -1,0 +1,15 @@
+
+<form method="post">{% csrf_token %}
+<input type ="text" name="title" id="title">
+<input type ="text" name="content" id="content">
+<input type="submit">
+</form>
+{% if note_list %}
+<ul>
+{% for note in note_list %}
+    <li><a>{{ note.title }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>沒有留言.</p>
+{% endif %}
